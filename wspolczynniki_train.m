@@ -114,7 +114,7 @@ function wsp = wspolczynniki_train()
     repmat([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0], length_w(w8),1);
     repmat([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], length_w(w9),1);
     repmat([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1], length_w(w0),1)]';
-
+   
 
 nn = feedforwardnet(50);
 nn.adaptFcn = 'adaptwb';
@@ -126,6 +126,6 @@ nn.trainFcn = 'trainlm';
 nn.performFcn = 'mse';
 nn = train(nn,trainin,trainout);
 
-ocr_final_new = nn;
-save ocr_final_new;
+ocr_final_8_new = nn;
+save ocr_final_8_new;
 end

@@ -77,7 +77,7 @@ function wsp = trenowanie_wspolczynniki()
     w9 = wczytaj_do_trenowania(ids_9);
     w0 = wczytaj_do_trenowania(ids_0);
 
-    trenowansko = [wa;wb;wc;wd;we;wf;wg;wh;wi;wj;wk;wl;wm;wn;wo;wp;wq;wr;ws;wt;wu;wv;ww;wx;wy;wz;w1;w2;w3;w4;w5;w6;w7;w8;w9;w0;]';
+    trenowanie = [wa;wb;wc;wd;we;wf;wg;wh;wi;wj;wk;wl;wm;wn;wo;wp;wq;wr;ws;wt;wu;wv;ww;wx;wy;wz;w1;w2;w3;w4;w5;w6;w7;w8;w9;w0;]';
 
     out = [
     repmat([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], dl(wa),1);
@@ -120,7 +120,7 @@ function wsp = trenowanie_wspolczynniki()
   
     nn = feedforwardnet([20,20,20]);
     nn.trainParam.max_fail = 10;
-    nn = train(nn, trenowansko, out);
+    nn = train(nn, trenowanie, out);
 
 neural_net = nn;
 save neural_net;
